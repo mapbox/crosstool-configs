@@ -1,0 +1,15 @@
+--- glibc-2.11.orig/sysdeps/i386/Makefile	2015-10-30 12:33:32.000000000 +0200
++++ glibc-2.11/sysdeps/i386/Makefile	2015-10-30 12:34:22.000000000 +0200
+@@ -8,7 +8,11 @@
+ ifeq ($(subdir),csu)
+ # On i686 we must avoid generating the trampoline functions generated
+ # to get the GOT pointer.
+-CFLAGS-initfini.s += -march=i386 -mtune=i386
++CFLAGS-initfini.s += -march=i386 -mtune=i386 -fno-unwind-tables -fno-asynchronous-unwind-tables
++endif
++
++ifeq ($(subdir),nptl)
++CFLAGS-pt-initfini.s += -fno-unwind-tables -fno-asynchronous-unwind-tables
+ endif
+ 
+ ifeq ($(subdir),gmon)
