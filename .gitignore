@@ -1,5 +1,5 @@
 /tarballs
 /work
 /install
-/configs/*/.config.2
-/configs/*/build.log
+/configs/*/*/.config.2
+/configs/*/*/build.log
