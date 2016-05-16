@@ -1,4 +1,4 @@
-/tarballs
+/tarballs/*[^README.md]
 /work
 /install
 /configs/*/*/.config.2
